@@ -1,15 +1,18 @@
 {% extends 'base.html' %}
 {% include 'includes/header.html' %}
+{% block title %}
+Записи сообщества {{ group.title }}
+{% endblock %}
 {% block content %}
-  <h1>{{ group.title }}</h1>
+  <h1> {{ group.title }}</h1>
   <p>
     {{ group.description }}
   </p>
-  {% for post in posts %}
+  {% for post in page_obj %}
     {% include 'posts/post1.html'%}
 {% endfor %}
-  <!-- под последним постом нет линии -->
+
 {% endblock %}
-<!-- то что описано в include/footer.html -->
+
 
 
